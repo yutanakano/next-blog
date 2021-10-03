@@ -1,21 +1,21 @@
-import React from 'react'
-import Link from "next/link";
-import { client } from "../libs/client";
+import React from 'react';
+import Link from 'next/link';
+import { client } from '../libs/client';
 
 interface Article {
-  id: string
-  title: string
-  publishedAt: string
+  id: string;
+  title: string;
+  publishedAt: string;
 }
 
 interface Contents {
-  contents: Article[]
+  contents: Article[];
 }
 
 export default function Home({
   blog,
 }: {
-  blog: { id: string; title: string; publishedAt: string }[]
+  blog: { id: string; title: string; publishedAt: string }[];
 }) {
   return (
     <div>
@@ -34,7 +34,7 @@ export default function Home({
 
 // データをテンプレートに受け渡す部分の処理を記述します
 export const getStaticProps = async () => {
-  const data: Contents = await client.get({ endpoint: "blog" });
+  const data: Contents = await client.get({ endpoint: 'blog' });
 
   return {
     props: {
@@ -42,4 +42,3 @@ export const getStaticProps = async () => {
     },
   };
 };
-
