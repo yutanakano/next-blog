@@ -7,7 +7,7 @@ export interface Props {
 
 export const Article = (props: Props) => {
   return (
-    <article className='markdown-body'>
+    <article>
       <h1 className={styles.title}>{props.blog.title}</h1>
       <p className={styles.publishedAt}>{props.blog.publishedAt}</p>
       <div

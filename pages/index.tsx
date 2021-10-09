@@ -1,6 +1,9 @@
 import React from 'react';
-import Link from 'next/link';
 import { client } from '../libs/client';
+import { Box, Grid } from '@mui/material';
+import { DenseAppBar } from '../components/atoms/DenseAppBar';
+import { FixedBottomNavigation } from '../components/atoms/FixedBottomNavigation';
+import { Articles } from '../components/atoms/Articles';
 
 interface Article {
   id: string;
@@ -13,22 +16,25 @@ interface Contents {
 }
 
 export default function Home({
-  blog,
+  blogs,
 }: {
-  blog: { id: string; title: string; publishedAt: string }[];
+  blogs: { id: string; title: string; publishedAt: string }[];
 }) {
   return (
-    <div>
-      <ul>
-        {blog.map((blog) => (
-          <li key={blog.id}>
-            <Link href={`/blog/${blog.id}`}>
-              <a>{blog.title}</a>
-            </Link>
-          </li>
-        ))}
-      </ul>
-    </div>
+    <>
+      <DenseAppBar />
+      <Box sx={{ flexGrow: 1 }}>
+        <Grid container spacing={2}>
+          <Grid item xs={12} md={10}>
+            <Articles blogs={blogs} />
+          </Grid>
+          <Grid item xs={12} md={2}>
+            <p>術式展開</p>
+          </Grid>
+        </Grid>
+      </Box>
+      <FixedBottomNavigation />
+    </>
   );
 }
 
@@ -38,7 +44,7 @@ export const getStaticProps = async () => {
 
   return {
     props: {
-      blog: data.contents,
+      blogs: data.contents,
     },
   };
 };
