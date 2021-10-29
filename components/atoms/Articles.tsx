@@ -6,6 +6,7 @@ export interface Props {
 }
 
 export const Articles = (props: Props) => {
+  // 画面中央に記事がくるようにする
   return (
     <ul>
       {props.blogs.map((blog) => (

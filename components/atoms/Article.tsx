@@ -6,6 +6,8 @@ export interface Props {
 }
 
 export const Article = (props: Props) => {
+  // 画面中央に記事がくるようにする
+  // はみ出る部分は折り返せるようにしたい
   return (
     <article>
       <h1 className={styles.title}>{props.blog.title}</h1>
