@@ -1,6 +1,6 @@
 import React from 'react';
 import { client } from '../../libs/client';
-import { Articles } from '../blog/articles';
+import { Articles } from '../blog/articles/index';
 
 interface Article {
   id: string;
@@ -15,7 +15,12 @@ interface Contents {
 export default function Home({
   blogs,
 }: {
-  blogs: { id: string; title: string; publishedAt: string }[];
+  blogs: {
+    id: string;
+    title: string;
+    image: { alt: string; image: { url: string } };
+    publishedAt: string;
+  }[];
 }) {
   return (
     <div>
