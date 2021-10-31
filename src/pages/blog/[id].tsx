@@ -1,6 +1,8 @@
 import { GetStaticProps, GetStaticPaths } from 'next';
 import { client } from '../../../libs/client';
 import styles from '../../../styles/Home.module.css';
+import { Header } from '../../layout/header';
+import { Footer } from '../../layout/footer';
 
 interface Article {
   id: string;
@@ -19,16 +21,20 @@ export default function BlogId({
   blog: { id: string; title: string; publishedAt: string; body: string };
 }) {
   return (
-    <main className={styles.main}>
-      <h1 className={styles.title}>{blog.title}</h1>
-      <p className={styles.publishedAt}>{blog.publishedAt}</p>
-      <div
-        dangerouslySetInnerHTML={{
-          __html: `${blog.body}`,
-        }}
-        className={styles.post}
-      />
-    </main>
+    <>
+      <Header />
+      <main className={styles.main}>
+        <h1 className={styles.title}>{blog.title}</h1>
+        <p className={styles.publishedAt}>{blog.publishedAt}</p>
+        <div
+          dangerouslySetInnerHTML={{
+            __html: `${blog.body}`,
+          }}
+          className={styles.post}
+        />
+      </main>
+      <Footer />
+    </>
   );
 }
 
