@@ -1,8 +1,7 @@
 import React from 'react';
 import { client } from '../../libs/client';
-import { Header } from '../layout/header';
+import { Layout } from '../layout';
 import { Articles } from '../blog/articles/index';
-import { Footer } from '../layout/footer';
 
 interface Article {
   id: string;
@@ -26,9 +25,9 @@ export default function Home({
 }) {
   return (
     <div>
-      <Header />
-      <Articles blogs={blogs} />
-      <Footer />
+      <Layout>
+        <Articles blogs={blogs} />
+      </Layout>
     </div>
   );
 }
