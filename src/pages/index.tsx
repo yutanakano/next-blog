@@ -1,6 +1,7 @@
 import React from 'react';
-import Link from 'next/link';
 import { client } from '../../libs/client';
+import { Layout } from '../layout';
+import { Articles } from '../blog/articles/index';
 
 interface Article {
   id: string;
@@ -13,21 +14,20 @@ interface Contents {
 }
 
 export default function Home({
-  blog,
+  blogs,
 }: {
-  blog: { id: string; title: string; publishedAt: string }[];
+  blogs: {
+    id: string;
+    title: string;
+    image: { alt: string; image: { url: string } };
+    publishedAt: string;
+  }[];
 }) {
   return (
     <div>
-      <ul>
-        {blog.map((blog) => (
-          <li key={blog.id}>
-            <Link href={`/blog/${blog.id}`}>
-              <a>{blog.title}</a>
-            </Link>
-          </li>
-        ))}
-      </ul>
+      <Layout>
+        <Articles blogs={blogs} />
+      </Layout>
     </div>
   );
 }
@@ -38,7 +38,7 @@ export const getStaticProps = async () => {
 
   return {
     props: {
-      blog: data.contents,
+      blogs: data.contents,
     },
   };
 };
