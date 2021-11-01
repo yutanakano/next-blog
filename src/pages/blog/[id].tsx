@@ -1,6 +1,5 @@
 import { GetStaticProps, GetStaticPaths } from 'next';
 import { client } from '../../../libs/client';
-import styles from '../../../styles/Home.module.css';
 import { Layout } from '../../layout';
 
 interface Article {
