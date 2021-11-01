@@ -21,10 +21,10 @@ export default function BlogId({
 }) {
   return (
     <Layout>
-      <h1 className={styles.title}>{blog.title}</h1>
-      <p className={styles.publishedAt}>{blog.publishedAt}</p>
+      <h1 className='mb-2 px-2 text-3xl font-bold'>{blog.title}</h1>
+      <p className='mb-2 px-2 text-xs text-right'>{blog.publishedAt}</p>
       <div
-        className='prose'
+        className='mb-2 px-2 prose'
         dangerouslySetInnerHTML={{
           __html: `${blog.body}`,
         }}
