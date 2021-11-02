@@ -1,6 +1,7 @@
 import { GetStaticProps, GetStaticPaths } from 'next';
 import { client } from '../../../libs/client';
 import { Layout } from '../../layout';
+import { Timestamp } from '../../blog/timestamp';
 
 interface Article {
   id: string;
@@ -22,7 +23,9 @@ export default function BlogId({
     <Layout>
       <main className='max-w-md mx-auto'>
         <article>
-          <p className='mb-2 px-2 text-xs text-right'>{blog.publishedAt}</p>
+          <div className='mb-2 px-2 text-right text-xs'>
+            <Timestamp>{blog.publishedAt}</Timestamp>
+          </div>
           <h1 className='mb-2 px-2 text-3xl font-bold'>{blog.title}</h1>
           <div
             className='mb-2 px-2 prose'

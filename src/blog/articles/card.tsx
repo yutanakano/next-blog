@@ -1,5 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
+import { Timestamp } from '../timestamp';
 
 export interface Props {
   blogs: {
@@ -27,7 +28,7 @@ export const Card = (props: Props) => {
 
             <div className='relative p-4 mt-auto'>
               <span className='block text-gray-200 text-sm'>
-                {blog.publishedAt}
+                <Timestamp>{blog.publishedAt}</Timestamp>
               </span>
               <h2 className='text-white text-xl font-semibold transition duration-100 mb-2'>
                 {blog.title}
