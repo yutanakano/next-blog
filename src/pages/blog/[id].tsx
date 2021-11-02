@@ -20,14 +20,18 @@ export default function BlogId({
 }) {
   return (
     <Layout>
-      <h1 className='mb-2 px-2 text-3xl font-bold'>{blog.title}</h1>
-      <p className='mb-2 px-2 text-xs text-right'>{blog.publishedAt}</p>
-      <div
-        className='mb-2 px-2 prose'
-        dangerouslySetInnerHTML={{
-          __html: `${blog.body}`,
-        }}
-      />
+      <main className='max-w-md mx-auto'>
+        <article>
+          <p className='mb-2 px-2 text-xs text-right'>{blog.publishedAt}</p>
+          <h1 className='mb-2 px-2 text-3xl font-bold'>{blog.title}</h1>
+          <div
+            className='mb-2 px-2 prose'
+            dangerouslySetInnerHTML={{
+              __html: `${blog.body}`,
+            }}
+          />
+        </article>
+      </main>
     </Layout>
   );
 }
