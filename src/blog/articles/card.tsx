@@ -1,5 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
+import { Timestamp } from '../timestamp';
 
 export interface Props {
   blogs: {
@@ -17,9 +18,9 @@ export const Card = (props: Props) => {
         <Link key={blog.id} href={`/blog/${blog.id}`}>
           <a className='group h-48 md:h-64 xl:h-96 flex flex-col bg-gray-100 rounded-lg shadow-lg overflow-hidden relative'>
             <img
-              src={blog.image?.image.url}
+              src={blog.image.image.url}
               loading='lazy'
-              alt={blog.image?.alt}
+              alt={blog.image.alt}
               className='w-full h-full object-cover object-center absolute inset-0 transform group-hover:scale-110 transition duration-200'
             />
 
@@ -27,7 +28,7 @@ export const Card = (props: Props) => {
 
             <div className='relative p-4 mt-auto'>
               <span className='block text-gray-200 text-sm'>
-                {blog.publishedAt}
+                <Timestamp>{blog.publishedAt}</Timestamp>
               </span>
               <h2 className='text-white text-xl font-semibold transition duration-100 mb-2'>
                 {blog.title}
