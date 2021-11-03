@@ -38,7 +38,7 @@ export default function BlogId({
         image={blog.image.image.url}
         url={`https://www.xn--m9jvas3fvb.com/${blog.id}`}
       />
-      <main className='max-w-md mx-auto'>
+      <main className='max-w-md mx-auto min-h-screen'>
         <article>
           <div className='mb-2 px-2 text-right text-xs'>
             <Timestamp>{blog.publishedAt}</Timestamp>
