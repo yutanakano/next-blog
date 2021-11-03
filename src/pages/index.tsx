@@ -1,4 +1,5 @@
 import React from 'react';
+import { OGP } from '../blog/ogp';
 import { client } from '../../libs/client';
 import { Layout } from '../layout';
 import { Articles } from '../blog/articles/index';
@@ -26,7 +27,16 @@ export default function Home({
   return (
     <div>
       <Layout>
-        <Articles blogs={blogs} />
+        <main className='min-h-screen'>
+          <OGP
+            title={'ぱるぷんて'}
+            description={'何が起きるかわからない'}
+            keyword={'blog'}
+            image={'https://www.xn--m9jvas3fvb.com/icon.png'}
+            url={'https://www.xn--m9jvas3fvb.com/'}
+          />
+          <Articles blogs={blogs} />
+        </main>
       </Layout>
     </div>
   );

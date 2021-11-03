@@ -1,5 +1,4 @@
 import React from 'react';
-import { OGP } from '../ogp';
 import { Card } from './card';
 
 export interface Props {
@@ -16,13 +15,6 @@ export const Articles = (props: Props) => {
     <div className='bg-white py-6 sm:py-8 lg:py-12'>
       <div className='max-w-screen-2xl px-4 md:px-8 mx-auto'>
         <div className='mb-10 md:mb-16'>
-          <OGP
-            title={'ぱるぷんて'}
-            description={'何が起きるかわからない'}
-            keyword={'blog'}
-            image={'https://www.xn--m9jvas3fvb.com/icon.png'}
-            url={'https://www.xn--m9jvas3fvb.com/'}
-          />
           <h2 className='text-gray-800 text-2xl lg:text-3xl font-bold text-center mb-4 md:mb-6'>
             Blog
           </h2>
