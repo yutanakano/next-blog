@@ -81,7 +81,8 @@ export const Footer = () => {
       </div>
 
       <div className='text-gray-400 text-sm text-center py-8'>
-        © 2021 - Present Flowrift. All rights reserved.
+        © {new Date().getFullYear()},{` `}
+        <a href='https://www.xn--m9jvas3fvb.com/'>ぱるぷんて.com</a>
       </div>
     </footer>
   );
