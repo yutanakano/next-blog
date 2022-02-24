@@ -64,7 +64,7 @@ export const Footer = () => {
 
       <div className='text-gray-400 text-sm text-center py-8'>
         © {new Date().getFullYear()},{` `}
-        <a href='https://www.xn--m9jvas3fvb.com/'>ぱるぷんて.com</a>
+        <a href='https://www.yutanakano.jp/'>yutanakano.jp</a>
       </div>
     </footer>
   );
