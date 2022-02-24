@@ -29,11 +29,11 @@ export default function Home({
       <Layout>
         <main className='min-h-screen'>
           <OGP
-            title={'ぱるぷんて'}
-            description={'何が起きるかわからない'}
+            title={'yutanakano'}
+            description={'怠惰です'}
             keyword={'blog'}
-            image={'https://www.xn--m9jvas3fvb.com/icon.png'}
-            url={'https://www.xn--m9jvas3fvb.com/'}
+            image={'https://www.yutanakano.jp/icon.png'}
+            url={'https://www.yutanakano.jp/'}
           />
           <Articles blogs={blogs} />
         </main>
